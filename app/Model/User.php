@@ -30,6 +30,6 @@ class User extends Eloquent {
 	 */
 	 protected $hidden = [
 		 //不显示
-		 'password',
+		
  ];
 }

@@ -35,17 +35,14 @@ class UserController
     public function updateUser($request,$response,$args)
     {
         $id = $args['id'];
-        $nickname = $args['nickname'];
-        $password = $args['password'];
-        $icon = $args['icon'];
-
+        $data = $request->getParsedBody();
         $user = User::find($id);
-        $user->nickname = $username;
-        $user->password = $password;
-        $user->icon = $icon;
+        $user->icon = $data['icon'];
+        $user->password = $data['password'];
+        $user->nickname = $data['nickname'];
         $user->save();
-
-        return json_encode($user);
+        $user['state'] = 'success';
+        return json_encode($data);
     }
 
     // public function deleteUser()
