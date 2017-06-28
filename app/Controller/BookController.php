@@ -50,7 +50,7 @@ class BookController
     }
 
 
-    public function query($request,$response,$args)
+    public function queryAllBook($request,$response,$args)
     {
         $user_id = $args['user_id'];
         //where多条件查询

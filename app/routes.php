@@ -19,7 +19,7 @@ $app->group('/user', function () {
 //书架群组
 $app->group('/bookShelf', function () {
     //查询
-    $this->get('/{user_id}', 'App\Controller\BookController:query');
+    $this->get('/{user_id}', 'App\Controller\BookController:queryAllBook');
     //添加
     $this->post('', 'App\Controller\BookController:createBook');
     //修改

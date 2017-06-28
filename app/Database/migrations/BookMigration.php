@@ -13,7 +13,7 @@ class BookMigration {
             $table->increments('id');
             $table->string('book_name');
             $table->string('book_icon');
-            $table->string('book_page');
+            $table->string('book_page')->nullable();
             $table->string('book_id');
             $table->string('user_id');
             $table->timestamps();
