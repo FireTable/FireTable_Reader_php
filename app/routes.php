@@ -28,6 +28,16 @@ $app->group('/bookShelf', function () {
     $this->delete('/{id}', 'App\Controller\BookController:deleteBook');
 });
 
+//阅读器群组
+$app->group('/bookReader', function () {
+    //查询
+    $this->get('/{user_id}', 'App\Controller\ReaderController:queryReader');
+    //添加
+    $this->post('', 'App\Controller\ReaderController:createReader');
+    //修改
+    $this->patch('/{id}', 'App\Controller\ReaderController:updateReader');
+});
+
 
 
 ?>
