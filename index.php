@@ -1,10 +1,9 @@
 <?php
 
-error_reporting(0);
+//error_reporting(0);
 
-
-
-require 'vendor/autoload.php';
+require './vendor/autoload.php';
+//require './app/config.php';
 
 $app = new \Slim\App([
     'settings' => [
@@ -20,6 +19,7 @@ $app->add(new \Tuupola\Middleware\Cors([
     "headers.expose" => ["FireTable"]
 ]));
 
-require_once 'app/routes.php';
+
+require_once './app/routes.php';
 
 $app->run();

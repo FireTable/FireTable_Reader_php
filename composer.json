@@ -1,15 +1,17 @@
 {
     "require": {
         "slim/slim": "^3.0",
-        "illuminate/database": "~5.1",
+        "illuminate/database": "^4.1",
         "tuupola/cors-middleware": "^0.5.2"
     },
     "autoload": {
         "psr-4": {
-            "App\\Database\\": "app/Config",
             "App\\Route\\": "app/",
             "App\\Model\\": "app/Model",
             "App\\Controller\\": "app/Controller"
-        }
+        },
+        "files": [ "app/Config/Capsule.php" ]
     }
+
+
 }

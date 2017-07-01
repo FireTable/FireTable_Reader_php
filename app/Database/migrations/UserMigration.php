@@ -14,7 +14,7 @@ class UserMigration {
             $table->string('username');
             $table->string('password');
             $table->string('icon')->default('http://opzvozftr.bkt.clouddn.com/Fh_8dwU-OUZ4ryZfEI0A6xC-GJRr');
-            $table->string('nickname');
+            $table->string('nickname')->nullable();
             $table->timestamps();
         });
     }

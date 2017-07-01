@@ -1,10 +1,16 @@
 <?php
 
 namespace App\Route;
-new \App\Database\Capsule;
+use \App\Database\Capsule;
+
+$capsule = new Capsule;
 
 //获取七牛token
 $app->get('/token', 'App\Controller\UserController:getToken');
+
+$app->get('/', function(){
+                echo "Nice to meet u";
+            });
 
 //用户群组
 $app->group('/user', function () {
@@ -28,7 +34,7 @@ $app->group('/bookShelf', function () {
     $this->delete('/{id}', 'App\Controller\BookController:deleteBook');
 });
 
-//阅读器群组
+//阅读器群 组
 $app->group('/bookReader', function () {
     //查询
     $this->get('/{user_id}', 'App\Controller\ReaderController:queryReader');

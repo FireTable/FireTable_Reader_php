@@ -5,6 +5,8 @@ namespace App\Database;
 use \Illuminate\Database\Capsule\Manager as CapsuleManager;
 use \Illuminate\Container\Container;
 
+
+
 class Capsule extends CapsuleManager
 {
 
@@ -13,10 +15,10 @@ class Capsule extends CapsuleManager
 
 		$settings = array (
 			'driver'    => 'mysql',
-	    'host'      => '127.0.0.1',
-	    'database'  => 'reader',
-	    'username'  => 'root',
-	    'password'  => 'root',
+	    'host'      => '',
+	    'database'  => '',
+	    'username'  => '',
+	    'password'  => '',
 	    'charset'   => 'utf8',
 	    'collation' => 'utf8_general_ci',
 	    'prefix'    => ''
@@ -25,6 +27,7 @@ class Capsule extends CapsuleManager
 		$this->addConnection($settings);
 		$this->setAsGlobal();
 		$this->bootEloquent();
+		date_default_timezone_set('UTC');
 	}
 
 	public function ConnectionManager() {

@@ -4,6 +4,7 @@ namespace App\Controller;
 use App\Database;
 use App\Model\User;
 
+
 class UserController
 {
     //获取七牛token
@@ -22,7 +23,7 @@ class UserController
         if($checkUser == null){
            $user = new User;
            $user->username = $data['username'];
-           $user->password = $data['password'];
+           $user->password = md5($data['password']);
            $user->nickname = $data['nickname'];
            $user->save();
            $user['state'] = 'success';
@@ -38,7 +39,7 @@ class UserController
         $data = $request->getParsedBody();
         $user = User::find($id);
         $user->icon = $data['icon'];
-        $user->password = $data['password'];
+        //$user->password = md5($data['password']);
         $user->nickname = $data['nickname'];
         $user->save();
         $user['state'] = 'success';
@@ -62,7 +63,7 @@ class UserController
     public function login($request,$response,$args)
     {
         $username = $args['username'];
-        $password = $args['password'];
+        $password = md5($args['password']);
         //where多条件查询
         $user = User::where([
           'username'=>$username,
