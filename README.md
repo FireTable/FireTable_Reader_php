@@ -1,6 +1,6 @@
 # FireTable_Reader 后台  
 使用slim3+Laravel的Eloquent模型  
-##### FireTable-Reader前端 [戳我进入](https://github.com/FireTable/FireTable_Reader) 
+##### FireTable-Reader前端 [戳我进入](https://github.com/FireTable/FireTable-Reader) 
 ##### FireTable-Reader后台 (就是这个项目)
 
 
